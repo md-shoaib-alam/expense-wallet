@@ -306,7 +306,145 @@ const darkNightTheme = {
   card: "#1F1F1F",
   shadow: "#000000",
 };
+// 🍬 Candy Theme
+const candyTheme = {
+  primary: "#FF69B4",
+  background: "#FFF0F5",
+  text: "#C71585",
+  border: "#FFC1E3",
+  white: "#FFFFFF",
+  textLight: "#FFB6C1",
+  expense: "#E91E63",
+  income: "#4CAF50",
+  card: "#FFFFFF",
+  shadow: "#000000",
+};
 
+// 🏔 Alpine Theme
+const alpineTheme = {
+  primary: "#4B8B3B",
+  background: "#F0FFF0",
+  text: "#2E4D2A",
+  border: "#C8E6C9",
+  white: "#FFFFFF",
+  textLight: "#81C784",
+  expense: "#C62828",
+  income: "#1B5E20",
+  card: "#FFFFFF",
+  shadow: "#000000",
+};
+
+// ⚡ Neon Theme
+const neonTheme = {
+  primary: "#39FF14",
+  background: "#000000",
+  text: "#39FF14",
+  border: "#00FF9D",
+  white: "#FFFFFF",
+  textLight: "#76FF7A",
+  expense: "#FF073A",
+  income: "#00FFFF",
+  card: "#0A0A0A",
+  shadow: "#000000",
+};
+
+// 🪞 Silver Theme
+const silverTheme = {
+  primary: "#C0C0C0",
+  background: "#F5F5F5",
+  text: "#4F4F4F",
+  border: "#D3D3D3",
+  white: "#FFFFFF",
+  textLight: "#B0B0B0",
+  expense: "#A52A2A",
+  income: "#2E8B57",
+  card: "#FFFFFF",
+  shadow: "#000000",
+};
+
+// 🪴 Sage Theme
+const sageTheme = {
+  primary: "#9CAF88",
+  background: "#F5F5F0",
+  text: "#5E6B55",
+  border: "#D8E2D0",
+  white: "#FFFFFF",
+  textLight: "#B7C6A5",
+  expense: "#B23A48",
+  income: "#4A7C59",
+  card: "#FFFFFF",
+  shadow: "#000000",
+};
+
+// 🦋 Lavender Theme
+const lavenderTheme = {
+  primary: "#9370DB",
+  background: "#F3E8FF",
+  text: "#5E4B8B",
+  border: "#E0C3FC",
+  white: "#FFFFFF",
+  textLight: "#BFA2DB",
+  expense: "#E75480",
+  income: "#7FB77E",
+  card: "#FFFFFF",
+  shadow: "#000000",
+};
+
+// 🍇 Grape Theme
+const grapeTheme = {
+  primary: "#6F2DA8",
+  background: "#F8F0FF",
+  text: "#4B0082",
+  border: "#E6CCFF",
+  white: "#FFFFFF",
+  textLight: "#A96CC1",
+  expense: "#C71585",
+  income: "#3CB371",
+  card: "#FFFFFF",
+  shadow: "#000000",
+};
+
+// 🏖 Coral Reef Theme
+const coralReefTheme = {
+  primary: "#FF7F50",
+  background: "#FFF5F0",
+  text: "#B23C17",
+  border: "#FFD5C2",
+  white: "#FFFFFF",
+  textLight: "#FFBFA3",
+  expense: "#E64A19",
+  income: "#2E8B57",
+  card: "#FFFFFF",
+  shadow: "#000000",
+};
+
+// 🪐 Cosmic Purple Theme
+const cosmicPurpleTheme = {
+  primary: "#7A00FF",
+  background: "#F4E9FF",
+  text: "#4B0082",
+  border: "#E0B3FF",
+  white: "#FFFFFF",
+  textLight: "#B266FF",
+  expense: "#FF1493",
+  income: "#00FF7F",
+  card: "#FFFFFF",
+  shadow: "#000000",
+};
+
+// 🐚 Pearl Theme
+const pearlTheme = {
+  primary: "#EAE0C8",
+  background: "#FFFBF0",
+  text: "#6B5E4E",
+  border: "#F5E6CC",
+  white: "#FFFFFF",
+  textLight: "#D9CBB2",
+  expense: "#A0522D",
+  income: "#228B22",
+  card: "#FFFFFF",
+  shadow: "#000000",
+};
 
 // Export All Themes
 export const THEMES = {
@@ -332,8 +470,18 @@ export const THEMES = {
   desert: desertTheme,
   autumn: autumnTheme,
   darkNight: darkNightTheme,
+  candy: candyTheme,
+  alpine: alpineTheme,
+  neon: neonTheme,
+  silver: silverTheme,
+  sage: sageTheme,
+  lavender: lavenderTheme,
+  grape: grapeTheme,
+  coralReef: coralReefTheme,
+  cosmicPurple: cosmicPurpleTheme,
+  pearl: pearlTheme,
 };
 
 
 // 👇 change this to switch theme
-export const COLORS = THEMES.coffee; // Change this to switch theme
+export const COLORS = THEMES.mint; // Change this to switch theme
