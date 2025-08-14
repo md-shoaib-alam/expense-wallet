@@ -484,4 +484,4 @@ export const THEMES = {
 
 
 // 👇 change this to switch theme
-export const COLORS = THEMES.coffee; // Change this to switch theme
+export const COLORS = THEMES.blossom; // Change this to switch theme
