@@ -39,7 +39,7 @@ export async function createTransactions(req,res){
 
 }
 
-export async function deleteTransactions(req,res){
+export async function deleteTransaction(req,res){
    
       try {
         const {id} = req.params
@@ -47,10 +47,10 @@ export async function deleteTransactions(req,res){
     if (isNaN(parseInt(id))){
       return res.status(400).json({message:"invalid transactions id"})
     }
-        const transactions = await sql`
+        const result = await sql`
           DELETE FROM transactions WHERE id=${id} RETURNING *
           `
-          if (transactions.length === 0){
+          if (result.length === 0){
             return res.status(400).json({message:"transaction not found"})
           }
           res.status(200).json({message:"transaction deleted successfully"})

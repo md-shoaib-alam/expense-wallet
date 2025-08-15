@@ -67,7 +67,11 @@ export default function SignUpScreen() {
     } catch (err) {
       // See https://clerk.com/docs/custom-flows/error-handling
       // for more info on error handling
-      console.error(JSON.stringify(err, null, 2));
+if (err.errors?.[0]?.code ==="form_identifier_exists") {
+  setError("That email address is already in use . Please try another .")
+} else {
+  setError("An error occurred . please try again later.")
+}
     }
   };
 
@@ -154,12 +158,12 @@ export default function SignUpScreen() {
 
         <View style={styles.footerContainer}>
           <Text style={styles.footerText}>Already have an account?</Text>
-          <Link href="/sign-in">
-            {/* we also use here like this for going on sign for mobile only  <Touchableopicity onPress={() => router.back()} >*/}
-            <TouchableOpacity>
+          {/* <Link href="/sign-in"> */}
+            {/* we also use here like this for going on sign for mobile only < TouchableOpacity onPress={() => router.back()} >*/}
+            <TouchableOpacity onPress={()=> router.back()}>
               <Text style={styles.linkText}>Sign in</Text>
             </TouchableOpacity>
-          </Link>
+          {/* </Link> */}
         </View>
       </View>
     </KeyboardAwareScrollView>
