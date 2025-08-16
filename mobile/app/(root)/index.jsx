@@ -1,19 +1,26 @@
 import { SignedIn, SignedOut, useUser } from "@clerk/clerk-expo";
 import { Link, router, useRouter } from "expo-router";
-import { Alert, FlatList, Image, Text, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  FlatList,
+  Image,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SignOutButton } from "@/components/SignOutButton";
 import { useTransactions } from "@/hooks/useTransactions";
 import { useEffect } from "react";
 import PageLoader from "../../components/PageLoader";
 import { styles } from "../../assets/styles/home.styles";
-import {Ionicons} from "@expo/vector-icons"
+import { Ionicons } from "@expo/vector-icons";
 import BalanceCard from "../../components/BalanceCard";
 import { TransactionItem } from "../../components/Transactionitem";
-
+import NoTransactionsFound from "../../components/NoTransactionsFound";
 
 export default function Page() {
   const { user } = useUser();
-  const router =useRouter()
+  const router = useRouter();
   const { transactions, summary, isLoading, loadData, deleteTransaction } =
     useTransactions(user.id);
 
@@ -21,12 +28,20 @@ export default function Page() {
     loadData();
   }, [loadData]);
 
-  const handleDelete = (id)=>{
-    Alert.alert("Delete transactions", "Are you sure you want to delete this transaction?",[
-      {text:"Cancel" , style:"cancel"},
-      {text:"Delete" , style:"destructive", onPress:()=>deleteTransaction(id)},
-    ])
-  }
+  const handleDelete = (id) => {
+    Alert.alert(
+      "Delete transactions",
+      "Are you sure you want to delete this transaction?",
+      [
+        { text: "Cancel", style: "cancel" },
+        {
+          text: "Delete",
+          style: "destructive",
+          onPress: () => deleteTransaction(id),
+        },
+      ]
+    );
+  };
 
   if (isLoading) return <PageLoader />;
 
@@ -51,11 +66,14 @@ export default function Page() {
           </View>
           {/* right  */}
           <View style={styles.headerRight}>
-            <TouchableOpacity style={styles.addButton} onPress={()=> router.push("/create")}>
+            <TouchableOpacity
+              style={styles.addButton}
+              onPress={() => router.push("/create")}
+            >
               <Ionicons name="add" size={20} color="#fff" />
               <Text style={styles.addButtonText}>Add</Text>
             </TouchableOpacity>
-            <SignOutButton/>
+            <SignOutButton />
           </View>
         </View>
         {/* balance card  */}
@@ -64,15 +82,17 @@ export default function Page() {
           <Text style={styles.sectionTitle}>Recent Transactions</Text>
         </View>
       </View>
-{/* flatlist  we use for performanet  way to render long list in react native  */}
-{/* it renders items lazily - only those won the screen */}
-      <FlatList 
-      style={styles.transactionsList}
-      contentContainerStyle={styles.transactionsListContent}
-      data={transactions}
-      renderItem={({item})=>(
-        <TransactionItem item={item} onDelete={handleDelete} />
-      )}
+      {/* flatList  we use for performant  way to render long list in react native  */}
+      {/* it renders items lazily - only those won the screen */}
+      <FlatList
+        style={styles.transactionsList}
+        contentContainerStyle={styles.transactionsListContent}
+        data={transactions}
+        renderItem={({ item }) => (
+          <TransactionItem item={item} onDelete={handleDelete} />
+        )}
+        ListEmptyComponent={<NoTransactionsFound/>}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
