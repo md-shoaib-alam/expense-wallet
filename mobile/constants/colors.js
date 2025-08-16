@@ -426,7 +426,7 @@ const cosmicPurpleTheme = {
   border: "#E0B3FF",
   white: "#FFFFFF",
   textLight: "#B266FF",
-  expense: "#FF1493",
+  expense: "#ff6614ff",
   income: "#00FF7F",
   card: "#FFFFFF",
   shadow: "#000000",
@@ -440,7 +440,7 @@ const pearlTheme = {
   border: "#F5E6CC",
   white: "#FFFFFF",
   textLight: "#D9CBB2",
-  expense: "#A0522D",
+  expense: "#d32714ff",
   income: "#228B22",
   card: "#FFFFFF",
   shadow: "#000000",
@@ -484,4 +484,4 @@ export const THEMES = {
 
 
 // 👇 change this to switch theme
-export const COLORS = THEMES.ice; // Change this to switch theme
+export const COLORS = THEMES.galaxy; // Change this to switch theme

@@ -33,12 +33,13 @@ export const styles = StyleSheet.create({
   },
   welcomeText: {
     fontSize: 14,
+    fontWeight:"600",
     color: COLORS.textLight,
     marginBottom: 2,
   },
   usernameText: {
-    fontSize: 16,
-    fontWeight: "600",
+    fontSize: 17,
+    fontWeight: "800",
     color: COLORS.text,
   },
   headerRight: {
@@ -97,6 +98,7 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: COLORS.textLight,
     marginBottom: 8,
+    fontWeight:"400",
   },
   balanceAmount: {
     fontSize: 32,
