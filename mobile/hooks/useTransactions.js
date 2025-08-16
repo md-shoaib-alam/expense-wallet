@@ -1,10 +1,11 @@
 import { useCallback, useState } from "react";
 import { Alert, Platform } from "react-native";
+import { API_URL } from "../constants/api";
 
 // Use your laptop's IP for mobile, localhost for web
-const API_URL = Platform.OS === 'web' 
-  ? "http://localhost:5001/api"           // For web browser
-  : "http://10.62.106.16:5001/api";       // For  physical mobile testing - your laptop's IP
+// const API_URL = Platform.OS === 'web' 
+//   ? "http://localhost:5001/api"           // For web browser
+//   : "http://10.62.106.16:5001/api";       // For  physical mobile testing - your laptop's IP
 
 // const API_URL = "http://localhost:5001/api";
 

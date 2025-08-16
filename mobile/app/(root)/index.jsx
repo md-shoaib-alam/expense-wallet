@@ -16,7 +16,7 @@ import PageLoader from "../../components/PageLoader";
 import { styles } from "../../assets/styles/home.styles";
 import { Ionicons } from "@expo/vector-icons";
 import BalanceCard from "../../components/BalanceCard";
-import { TransactionItem } from "../../components/Transactionitem";
+import { TransactionItem } from "../../components/TransactionItem";
 import NoTransactionsFound from "../../components/NoTransactionsFound";
 export default function Page() {
   const { user } = useUser();
@@ -62,7 +62,7 @@ export default function Page() {
             <Image
               source={require("../../assets/images/logo.png")}
               style={styles.headerLogo}
-              resizeMode="contain"
+              contentFit="contain"
             />
             <View style={styles.welcomeContainer}>
               <Text style={styles.welcomeText}>Welcome ,</Text>
